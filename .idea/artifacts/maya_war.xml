@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="maya:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>maya</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="maya.war">
+      <element id="artifact" artifact-name="maya:war exploded" />
+    </root>
+  </artifact>
+</component>

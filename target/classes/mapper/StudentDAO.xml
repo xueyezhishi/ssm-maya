@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imooc.student.dao.StudentDAO">
+  <resultMap id="BaseResultMap" type="com.imooc.student.model.Student">
+    <id column="student_id" jdbcType="VARCHAR" property="studentId" />
+    <result column="student_name" jdbcType="VARCHAR" property="studentName" />
+    <result column="student_tel" jdbcType="DECIMAL" property="studentTel" />
+    <result column="vnote" jdbcType="VARCHAR" property="vnote" />
+    <result column="student_type" jdbcType="VARCHAR" property="studentType" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    student_id, student_name, student_tel, vnote, student_type
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from student
+    where student_id = #{studentId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from student
+    where student_id = #{studentId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.imooc.student.model.Student">
+    insert into student (student_id,student_name, student_tel, vnote,
+      student_type)
+    values (#{studentId,jdbcType=VARCHAR},#{studentName,jdbcType=VARCHAR}, #{studentTel,jdbcType=DECIMAL}, #{vnote,jdbcType=VARCHAR},
+      #{studentType,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="student_id" keyProperty="studentId" parameterType="com.imooc.student.model.Student" useGeneratedKeys="true">
+    insert into student
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="studentName != null">
+        student_name,
+      </if>
+      <if test="studentTel != null">
+        student_tel,
+      </if>
+      <if test="vnote != null">
+        vnote,
+      </if>
+      <if test="studentType != null">
+        student_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="studentName != null">
+        #{studentName,jdbcType=VARCHAR},
+      </if>
+      <if test="studentTel != null">
+        #{studentTel,jdbcType=DECIMAL},
+      </if>
+      <if test="vnote != null">
+        #{vnote,jdbcType=VARCHAR},
+      </if>
+      <if test="studentType != null">
+        #{studentType,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.imooc.student.model.Student">
+    update student
+    <set>
+      <if test="studentName != null">
+        student_name = #{studentName,jdbcType=VARCHAR},
+      </if>
+      <if test="studentTel != null">
+        student_tel = #{studentTel,jdbcType=DECIMAL},
+      </if>
+      <if test="vnote != null">
+        vnote = #{vnote,jdbcType=VARCHAR},
+      </if>
+      <if test="studentType != null">
+        student_type = #{studentType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where student_id = #{studentId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.imooc.student.model.Student">
+    update student
+    set student_name = #{studentName,jdbcType=VARCHAR},
+      student_tel = #{studentTel,jdbcType=DECIMAL},
+      vnote = #{vnote,jdbcType=VARCHAR},
+      student_type = #{studentType,jdbcType=VARCHAR}
+    where student_id = #{studentId,jdbcType=VARCHAR}
+  </update>
+</mapper>

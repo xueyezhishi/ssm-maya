@@ -1,0 +1,1196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BdHouse">
+  <resultMap id="BaseResultMap" type="com.example.BdHouse">
+    <id column="PK_HOUSE" jdbcType="VARCHAR" property="pkHouse" />
+    <result column="CODE" jdbcType="VARCHAR" property="code" />
+    <result column="AREA" jdbcType="VARCHAR" property="area" />
+    <result column="PK_PROJECT" jdbcType="VARCHAR" property="pkProject" />
+    <result column="ADDRESSVERSION" jdbcType="DECIMAL" property="addressversion" />
+    <result column="HOUSETYPE" jdbcType="VARCHAR" property="housetype" />
+    <result column="OWNERUNIT" jdbcType="VARCHAR" property="ownerunit" />
+    <result column="USERUNIT" jdbcType="VARCHAR" property="userunit" />
+    <result column="BUREAUUNIT" jdbcType="VARCHAR" property="bureauunit" />
+    <result column="STRUCTUREAREA" jdbcType="DECIMAL" property="structurearea" />
+    <result column="USEAREA" jdbcType="DECIMAL" property="usearea" />
+    <result column="HOUSESTRUCTURE" jdbcType="VARCHAR" property="housestructure" />
+    <result column="BUILDYEAR" jdbcType="VARCHAR" property="buildyear" />
+    <result column="ALLLEVEL" jdbcType="DECIMAL" property="alllevel" />
+    <result column="LEVELS" jdbcType="DECIMAL" property="levels" />
+    <result column="USETYPE" jdbcType="VARCHAR" property="usetype" />
+    <result column="LICENSEDATE" jdbcType="VARCHAR" property="licensedate" />
+    <result column="WARRANTAREA" jdbcType="DECIMAL" property="warrantarea" />
+    <result column="OWNERSHIPLICENSE" jdbcType="VARCHAR" property="ownershiplicense" />
+    <result column="FIELDUSE" jdbcType="VARCHAR" property="fielduse" />
+    <result column="FIELDAREA" jdbcType="DECIMAL" property="fieldarea" />
+    <result column="SIGNTIME" jdbcType="VARCHAR" property="signtime" />
+    <result column="ENABLE" jdbcType="VARCHAR" property="enable" />
+    <result column="DR" jdbcType="VARCHAR" property="dr" />
+    <result column="TS" jdbcType="CHAR" property="ts" />
+    <result column="DEF1" jdbcType="VARCHAR" property="def1" />
+    <result column="DEF2" jdbcType="VARCHAR" property="def2" />
+    <result column="DEF3" jdbcType="VARCHAR" property="def3" />
+    <result column="DEF4" jdbcType="VARCHAR" property="def4" />
+    <result column="DEF5" jdbcType="VARCHAR" property="def5" />
+    <result column="CREATOR" jdbcType="VARCHAR" property="creator" />
+    <result column="CREATIONTIME" jdbcType="VARCHAR" property="creationtime" />
+    <result column="MODIFIER" jdbcType="VARCHAR" property="modifier" />
+    <result column="MODIFITIME" jdbcType="CHAR" property="modifitime" />
+    <result column="HOUSESOURCE" jdbcType="VARCHAR" property="housesource" />
+    <result column="INFOALL" jdbcType="CHAR" property="infoall" />
+    <result column="DEF6" jdbcType="VARCHAR" property="def6" />
+    <result column="DEF7" jdbcType="VARCHAR" property="def7" />
+    <result column="DEF8" jdbcType="VARCHAR" property="def8" />
+    <result column="DEF9" jdbcType="VARCHAR" property="def9" />
+    <result column="DEF10" jdbcType="VARCHAR" property="def10" />
+    <result column="PK_ORG" jdbcType="VARCHAR" property="pkOrg" />
+    <result column="PK_DEPT" jdbcType="VARCHAR" property="pkDept" />
+    <result column="ISACCOUNT" jdbcType="CHAR" property="isaccount" />
+    <result column="IMPORTER" jdbcType="VARCHAR" property="importer" />
+    <result column="IMPORTTIME" jdbcType="VARCHAR" property="importtime" />
+    <result column="ORIENTATION" jdbcType="VARCHAR" property="orientation" />
+    <result column="PART" jdbcType="VARCHAR" property="part" />
+    <result column="PROPERVALUE" jdbcType="DECIMAL" property="propervalue" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+    <result column="PROSTATUS" jdbcType="VARCHAR" property="prostatus" />
+    <result column="POI_ID" jdbcType="VARCHAR" property="poiId" />
+    <result column="ORDX" jdbcType="DECIMAL" property="ordx" />
+    <result column="ORDX1" jdbcType="DECIMAL" property="ordx1" />
+    <result column="ORDY" jdbcType="DECIMAL" property="ordy" />
+    <result column="ORDY1" jdbcType="DECIMAL" property="ordy1" />
+    <result column="ZONE_TYPE" jdbcType="VARCHAR" property="zoneType" />
+    <result column="ADMIN_DISTRICT" jdbcType="VARCHAR" property="adminDistrict" />
+    <result column="HOUSE_USAGE" jdbcType="VARCHAR" property="houseUsage" />
+    <result column="USAGE_TYLE" jdbcType="VARCHAR" property="usageTyle" />
+    <result column="PROPERTY_OWNER" jdbcType="VARCHAR" property="propertyOwner" />
+    <result column="YEAR_BUILT" jdbcType="VARCHAR" property="yearBuilt" />
+    <result column="IS_DANGEROUS_HOUSE" jdbcType="VARCHAR" property="isDangerousHouse" />
+    <result column="IS_BASEMENT" jdbcType="VARCHAR" property="isBasement" />
+    <result column="HOUSE_RIGHT" jdbcType="VARCHAR" property="houseRight" />
+    <result column="ASSET_NO" jdbcType="VARCHAR" property="assetNo" />
+    <result column="CERT_STATUS" jdbcType="VARCHAR" property="certStatus" />
+    <result column="HISTORYID" jdbcType="VARCHAR" property="historyid" />
+    <result column="FILENUM" jdbcType="VARCHAR" property="filenum" />
+    <result column="CODE1" jdbcType="VARCHAR" property="code1" />
+    <result column="CODE2" jdbcType="VARCHAR" property="code2" />
+    <result column="CODE3" jdbcType="VARCHAR" property="code3" />
+    <result column="CODE4" jdbcType="VARCHAR" property="code4" />
+    <result column="CODE5" jdbcType="VARCHAR" property="code5" />
+    <result column="CODE6" jdbcType="VARCHAR" property="code6" />
+    <result column="SELL_DATE" jdbcType="VARCHAR" property="sellDate" />
+    <result column="PK_LAND" jdbcType="VARCHAR" property="pkLand" />
+    <result column="PK_ORG_VALUE" jdbcType="VARCHAR" property="pkOrgValue" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.example.BdHouseWithBLOBs">
+    <result column="ADDRESS" jdbcType="LONGVARCHAR" property="address" />
+    <result column="LICENSENO" jdbcType="LONGVARCHAR" property="licenseno" />
+    <result column="FIELDNO" jdbcType="LONGVARCHAR" property="fieldno" />
+    <result column="VNOTE" jdbcType="LONGVARCHAR" property="vnote" />
+    <result column="LICENSENO2" jdbcType="LONGVARCHAR" property="licenseno2" />
+    <result column="LICENSENO3" jdbcType="LONGVARCHAR" property="licenseno3" />
+    <result column="FIELDNO2" jdbcType="LONGVARCHAR" property="fieldno2" />
+    <result column="FIELDNO3" jdbcType="LONGVARCHAR" property="fieldno3" />
+    <result column="ADDRESSPATH" jdbcType="LONGVARCHAR" property="addresspath" />
+    <result column="POIS" jdbcType="LONGVARCHAR" property="pois" />
+    <result column="IMPROPERTYNO" jdbcType="LONGVARCHAR" property="impropertyno" />
+    <result column="OLD_UNIT" jdbcType="LONGVARCHAR" property="oldUnit" />
+    <result column="USE_UNIT" jdbcType="LONGVARCHAR" property="useUnit" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PK_HOUSE, CODE, AREA, PK_PROJECT, ADDRESSVERSION, HOUSETYPE, OWNERUNIT, USERUNIT, 
+    BUREAUUNIT, STRUCTUREAREA, USEAREA, HOUSESTRUCTURE, BUILDYEAR, ALLLEVEL, LEVELS, 
+    USETYPE, LICENSEDATE, WARRANTAREA, OWNERSHIPLICENSE, FIELDUSE, FIELDAREA, SIGNTIME, 
+    `ENABLE`, DR, TS, DEF1, DEF2, DEF3, DEF4, DEF5, CREATOR, CREATIONTIME, MODIFIER, 
+    MODIFITIME, HOUSESOURCE, INFOALL, DEF6, DEF7, DEF8, DEF9, DEF10, PK_ORG, PK_DEPT, 
+    ISACCOUNT, IMPORTER, IMPORTTIME, ORIENTATION, `PART`, PROPERVALUE, `STATUS`, PROSTATUS, 
+    POI_ID, ORDX, ORDX1, ORDY, ORDY1, ZONE_TYPE, ADMIN_DISTRICT, HOUSE_USAGE, USAGE_TYLE, 
+    PROPERTY_OWNER, YEAR_BUILT, IS_DANGEROUS_HOUSE, IS_BASEMENT, HOUSE_RIGHT, ASSET_NO, 
+    CERT_STATUS, HISTORYID, FILENUM, CODE1, CODE2, CODE3, CODE4, CODE5, CODE6, SELL_DATE, 
+    PK_LAND, PK_ORG_VALUE
+  </sql>
+  <sql id="Blob_Column_List">
+    ADDRESS, LICENSENO, FIELDNO, VNOTE, LICENSENO2, LICENSENO3, FIELDNO2, FIELDNO3, ADDRESSPATH, 
+    POIS, IMPROPERTYNO, OLD_UNIT, USE_UNIT
+  </sql>
+      <select id="findUserById" parameterType="java.lang.Integer" resultType="com.example.BdHouse">
+        SELECT * FROM bd_house WHERE PK_HOUSE=#{pkHouse}
+    </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from bd_house
+    where PK_HOUSE = #{pkHouse,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from bd_house
+    where PK_HOUSE = #{pkHouse,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.example.BdHouseWithBLOBs">
+    insert into bd_house (PK_HOUSE, CODE, AREA, 
+      PK_PROJECT, ADDRESSVERSION, HOUSETYPE, 
+      OWNERUNIT, USERUNIT, BUREAUUNIT, 
+      STRUCTUREAREA, USEAREA, HOUSESTRUCTURE, 
+      BUILDYEAR, ALLLEVEL, LEVELS, 
+      USETYPE, LICENSEDATE, WARRANTAREA, 
+      OWNERSHIPLICENSE, FIELDUSE, FIELDAREA, 
+      SIGNTIME, `ENABLE`, DR, 
+      TS, DEF1, DEF2, DEF3, 
+      DEF4, DEF5, CREATOR, 
+      CREATIONTIME, MODIFIER, MODIFITIME, 
+      HOUSESOURCE, INFOALL, DEF6, 
+      DEF7, DEF8, DEF9, DEF10, 
+      PK_ORG, PK_DEPT, ISACCOUNT, 
+      IMPORTER, IMPORTTIME, ORIENTATION, 
+      `PART`, PROPERVALUE, `STATUS`, 
+      PROSTATUS, POI_ID, ORDX, 
+      ORDX1, ORDY, ORDY1, 
+      ZONE_TYPE, ADMIN_DISTRICT, HOUSE_USAGE, 
+      USAGE_TYLE, PROPERTY_OWNER, YEAR_BUILT, 
+      IS_DANGEROUS_HOUSE, IS_BASEMENT, HOUSE_RIGHT, 
+      ASSET_NO, CERT_STATUS, HISTORYID, 
+      FILENUM, CODE1, CODE2, 
+      CODE3, CODE4, CODE5, 
+      CODE6, SELL_DATE, PK_LAND, 
+      PK_ORG_VALUE, ADDRESS, LICENSENO, 
+      FIELDNO, VNOTE, LICENSENO2, 
+      LICENSENO3, FIELDNO2, FIELDNO3, 
+      ADDRESSPATH, POIS, IMPROPERTYNO, 
+      OLD_UNIT, USE_UNIT)
+    values (#{pkHouse,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, #{area,jdbcType=VARCHAR}, 
+      #{pkProject,jdbcType=VARCHAR}, #{addressversion,jdbcType=DECIMAL}, #{housetype,jdbcType=VARCHAR}, 
+      #{ownerunit,jdbcType=VARCHAR}, #{userunit,jdbcType=VARCHAR}, #{bureauunit,jdbcType=VARCHAR}, 
+      #{structurearea,jdbcType=DECIMAL}, #{usearea,jdbcType=DECIMAL}, #{housestructure,jdbcType=VARCHAR}, 
+      #{buildyear,jdbcType=VARCHAR}, #{alllevel,jdbcType=DECIMAL}, #{levels,jdbcType=DECIMAL}, 
+      #{usetype,jdbcType=VARCHAR}, #{licensedate,jdbcType=VARCHAR}, #{warrantarea,jdbcType=DECIMAL}, 
+      #{ownershiplicense,jdbcType=VARCHAR}, #{fielduse,jdbcType=VARCHAR}, #{fieldarea,jdbcType=DECIMAL}, 
+      #{signtime,jdbcType=VARCHAR}, #{enable,jdbcType=VARCHAR}, #{dr,jdbcType=VARCHAR}, 
+      #{ts,jdbcType=CHAR}, #{def1,jdbcType=VARCHAR}, #{def2,jdbcType=VARCHAR}, #{def3,jdbcType=VARCHAR}, 
+      #{def4,jdbcType=VARCHAR}, #{def5,jdbcType=VARCHAR}, #{creator,jdbcType=VARCHAR}, 
+      #{creationtime,jdbcType=VARCHAR}, #{modifier,jdbcType=VARCHAR}, #{modifitime,jdbcType=CHAR}, 
+      #{housesource,jdbcType=VARCHAR}, #{infoall,jdbcType=CHAR}, #{def6,jdbcType=VARCHAR}, 
+      #{def7,jdbcType=VARCHAR}, #{def8,jdbcType=VARCHAR}, #{def9,jdbcType=VARCHAR}, #{def10,jdbcType=VARCHAR}, 
+      #{pkOrg,jdbcType=VARCHAR}, #{pkDept,jdbcType=VARCHAR}, #{isaccount,jdbcType=CHAR}, 
+      #{importer,jdbcType=VARCHAR}, #{importtime,jdbcType=VARCHAR}, #{orientation,jdbcType=VARCHAR}, 
+      #{part,jdbcType=VARCHAR}, #{propervalue,jdbcType=DECIMAL}, #{status,jdbcType=VARCHAR}, 
+      #{prostatus,jdbcType=VARCHAR}, #{poiId,jdbcType=VARCHAR}, #{ordx,jdbcType=DECIMAL}, 
+      #{ordx1,jdbcType=DECIMAL}, #{ordy,jdbcType=DECIMAL}, #{ordy1,jdbcType=DECIMAL}, 
+      #{zoneType,jdbcType=VARCHAR}, #{adminDistrict,jdbcType=VARCHAR}, #{houseUsage,jdbcType=VARCHAR}, 
+      #{usageTyle,jdbcType=VARCHAR}, #{propertyOwner,jdbcType=VARCHAR}, #{yearBuilt,jdbcType=VARCHAR}, 
+      #{isDangerousHouse,jdbcType=VARCHAR}, #{isBasement,jdbcType=VARCHAR}, #{houseRight,jdbcType=VARCHAR}, 
+      #{assetNo,jdbcType=VARCHAR}, #{certStatus,jdbcType=VARCHAR}, #{historyid,jdbcType=VARCHAR}, 
+      #{filenum,jdbcType=VARCHAR}, #{code1,jdbcType=VARCHAR}, #{code2,jdbcType=VARCHAR}, 
+      #{code3,jdbcType=VARCHAR}, #{code4,jdbcType=VARCHAR}, #{code5,jdbcType=VARCHAR}, 
+      #{code6,jdbcType=VARCHAR}, #{sellDate,jdbcType=VARCHAR}, #{pkLand,jdbcType=VARCHAR}, 
+      #{pkOrgValue,jdbcType=VARCHAR}, #{address,jdbcType=LONGVARCHAR}, #{licenseno,jdbcType=LONGVARCHAR}, 
+      #{fieldno,jdbcType=LONGVARCHAR}, #{vnote,jdbcType=LONGVARCHAR}, #{licenseno2,jdbcType=LONGVARCHAR}, 
+      #{licenseno3,jdbcType=LONGVARCHAR}, #{fieldno2,jdbcType=LONGVARCHAR}, #{fieldno3,jdbcType=LONGVARCHAR}, 
+      #{addresspath,jdbcType=LONGVARCHAR}, #{pois,jdbcType=LONGVARCHAR}, #{impropertyno,jdbcType=LONGVARCHAR}, 
+      #{oldUnit,jdbcType=LONGVARCHAR}, #{useUnit,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.BdHouseWithBLOBs">
+    insert into bd_house
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pkHouse != null">
+        PK_HOUSE,
+      </if>
+      <if test="code != null">
+        CODE,
+      </if>
+      <if test="area != null">
+        AREA,
+      </if>
+      <if test="pkProject != null">
+        PK_PROJECT,
+      </if>
+      <if test="addressversion != null">
+        ADDRESSVERSION,
+      </if>
+      <if test="housetype != null">
+        HOUSETYPE,
+      </if>
+      <if test="ownerunit != null">
+        OWNERUNIT,
+      </if>
+      <if test="userunit != null">
+        USERUNIT,
+      </if>
+      <if test="bureauunit != null">
+        BUREAUUNIT,
+      </if>
+      <if test="structurearea != null">
+        STRUCTUREAREA,
+      </if>
+      <if test="usearea != null">
+        USEAREA,
+      </if>
+      <if test="housestructure != null">
+        HOUSESTRUCTURE,
+      </if>
+      <if test="buildyear != null">
+        BUILDYEAR,
+      </if>
+      <if test="alllevel != null">
+        ALLLEVEL,
+      </if>
+      <if test="levels != null">
+        LEVELS,
+      </if>
+      <if test="usetype != null">
+        USETYPE,
+      </if>
+      <if test="licensedate != null">
+        LICENSEDATE,
+      </if>
+      <if test="warrantarea != null">
+        WARRANTAREA,
+      </if>
+      <if test="ownershiplicense != null">
+        OWNERSHIPLICENSE,
+      </if>
+      <if test="fielduse != null">
+        FIELDUSE,
+      </if>
+      <if test="fieldarea != null">
+        FIELDAREA,
+      </if>
+      <if test="signtime != null">
+        SIGNTIME,
+      </if>
+      <if test="enable != null">
+        `ENABLE`,
+      </if>
+      <if test="dr != null">
+        DR,
+      </if>
+      <if test="ts != null">
+        TS,
+      </if>
+      <if test="def1 != null">
+        DEF1,
+      </if>
+      <if test="def2 != null">
+        DEF2,
+      </if>
+      <if test="def3 != null">
+        DEF3,
+      </if>
+      <if test="def4 != null">
+        DEF4,
+      </if>
+      <if test="def5 != null">
+        DEF5,
+      </if>
+      <if test="creator != null">
+        CREATOR,
+      </if>
+      <if test="creationtime != null">
+        CREATIONTIME,
+      </if>
+      <if test="modifier != null">
+        MODIFIER,
+      </if>
+      <if test="modifitime != null">
+        MODIFITIME,
+      </if>
+      <if test="housesource != null">
+        HOUSESOURCE,
+      </if>
+      <if test="infoall != null">
+        INFOALL,
+      </if>
+      <if test="def6 != null">
+        DEF6,
+      </if>
+      <if test="def7 != null">
+        DEF7,
+      </if>
+      <if test="def8 != null">
+        DEF8,
+      </if>
+      <if test="def9 != null">
+        DEF9,
+      </if>
+      <if test="def10 != null">
+        DEF10,
+      </if>
+      <if test="pkOrg != null">
+        PK_ORG,
+      </if>
+      <if test="pkDept != null">
+        PK_DEPT,
+      </if>
+      <if test="isaccount != null">
+        ISACCOUNT,
+      </if>
+      <if test="importer != null">
+        IMPORTER,
+      </if>
+      <if test="importtime != null">
+        IMPORTTIME,
+      </if>
+      <if test="orientation != null">
+        ORIENTATION,
+      </if>
+      <if test="part != null">
+        `PART`,
+      </if>
+      <if test="propervalue != null">
+        PROPERVALUE,
+      </if>
+      <if test="status != null">
+        `STATUS`,
+      </if>
+      <if test="prostatus != null">
+        PROSTATUS,
+      </if>
+      <if test="poiId != null">
+        POI_ID,
+      </if>
+      <if test="ordx != null">
+        ORDX,
+      </if>
+      <if test="ordx1 != null">
+        ORDX1,
+      </if>
+      <if test="ordy != null">
+        ORDY,
+      </if>
+      <if test="ordy1 != null">
+        ORDY1,
+      </if>
+      <if test="zoneType != null">
+        ZONE_TYPE,
+      </if>
+      <if test="adminDistrict != null">
+        ADMIN_DISTRICT,
+      </if>
+      <if test="houseUsage != null">
+        HOUSE_USAGE,
+      </if>
+      <if test="usageTyle != null">
+        USAGE_TYLE,
+      </if>
+      <if test="propertyOwner != null">
+        PROPERTY_OWNER,
+      </if>
+      <if test="yearBuilt != null">
+        YEAR_BUILT,
+      </if>
+      <if test="isDangerousHouse != null">
+        IS_DANGEROUS_HOUSE,
+      </if>
+      <if test="isBasement != null">
+        IS_BASEMENT,
+      </if>
+      <if test="houseRight != null">
+        HOUSE_RIGHT,
+      </if>
+      <if test="assetNo != null">
+        ASSET_NO,
+      </if>
+      <if test="certStatus != null">
+        CERT_STATUS,
+      </if>
+      <if test="historyid != null">
+        HISTORYID,
+      </if>
+      <if test="filenum != null">
+        FILENUM,
+      </if>
+      <if test="code1 != null">
+        CODE1,
+      </if>
+      <if test="code2 != null">
+        CODE2,
+      </if>
+      <if test="code3 != null">
+        CODE3,
+      </if>
+      <if test="code4 != null">
+        CODE4,
+      </if>
+      <if test="code5 != null">
+        CODE5,
+      </if>
+      <if test="code6 != null">
+        CODE6,
+      </if>
+      <if test="sellDate != null">
+        SELL_DATE,
+      </if>
+      <if test="pkLand != null">
+        PK_LAND,
+      </if>
+      <if test="pkOrgValue != null">
+        PK_ORG_VALUE,
+      </if>
+      <if test="address != null">
+        ADDRESS,
+      </if>
+      <if test="licenseno != null">
+        LICENSENO,
+      </if>
+      <if test="fieldno != null">
+        FIELDNO,
+      </if>
+      <if test="vnote != null">
+        VNOTE,
+      </if>
+      <if test="licenseno2 != null">
+        LICENSENO2,
+      </if>
+      <if test="licenseno3 != null">
+        LICENSENO3,
+      </if>
+      <if test="fieldno2 != null">
+        FIELDNO2,
+      </if>
+      <if test="fieldno3 != null">
+        FIELDNO3,
+      </if>
+      <if test="addresspath != null">
+        ADDRESSPATH,
+      </if>
+      <if test="pois != null">
+        POIS,
+      </if>
+      <if test="impropertyno != null">
+        IMPROPERTYNO,
+      </if>
+      <if test="oldUnit != null">
+        OLD_UNIT,
+      </if>
+      <if test="useUnit != null">
+        USE_UNIT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pkHouse != null">
+        #{pkHouse,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null">
+        #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="pkProject != null">
+        #{pkProject,jdbcType=VARCHAR},
+      </if>
+      <if test="addressversion != null">
+        #{addressversion,jdbcType=DECIMAL},
+      </if>
+      <if test="housetype != null">
+        #{housetype,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerunit != null">
+        #{ownerunit,jdbcType=VARCHAR},
+      </if>
+      <if test="userunit != null">
+        #{userunit,jdbcType=VARCHAR},
+      </if>
+      <if test="bureauunit != null">
+        #{bureauunit,jdbcType=VARCHAR},
+      </if>
+      <if test="structurearea != null">
+        #{structurearea,jdbcType=DECIMAL},
+      </if>
+      <if test="usearea != null">
+        #{usearea,jdbcType=DECIMAL},
+      </if>
+      <if test="housestructure != null">
+        #{housestructure,jdbcType=VARCHAR},
+      </if>
+      <if test="buildyear != null">
+        #{buildyear,jdbcType=VARCHAR},
+      </if>
+      <if test="alllevel != null">
+        #{alllevel,jdbcType=DECIMAL},
+      </if>
+      <if test="levels != null">
+        #{levels,jdbcType=DECIMAL},
+      </if>
+      <if test="usetype != null">
+        #{usetype,jdbcType=VARCHAR},
+      </if>
+      <if test="licensedate != null">
+        #{licensedate,jdbcType=VARCHAR},
+      </if>
+      <if test="warrantarea != null">
+        #{warrantarea,jdbcType=DECIMAL},
+      </if>
+      <if test="ownershiplicense != null">
+        #{ownershiplicense,jdbcType=VARCHAR},
+      </if>
+      <if test="fielduse != null">
+        #{fielduse,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldarea != null">
+        #{fieldarea,jdbcType=DECIMAL},
+      </if>
+      <if test="signtime != null">
+        #{signtime,jdbcType=VARCHAR},
+      </if>
+      <if test="enable != null">
+        #{enable,jdbcType=VARCHAR},
+      </if>
+      <if test="dr != null">
+        #{dr,jdbcType=VARCHAR},
+      </if>
+      <if test="ts != null">
+        #{ts,jdbcType=CHAR},
+      </if>
+      <if test="def1 != null">
+        #{def1,jdbcType=VARCHAR},
+      </if>
+      <if test="def2 != null">
+        #{def2,jdbcType=VARCHAR},
+      </if>
+      <if test="def3 != null">
+        #{def3,jdbcType=VARCHAR},
+      </if>
+      <if test="def4 != null">
+        #{def4,jdbcType=VARCHAR},
+      </if>
+      <if test="def5 != null">
+        #{def5,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creationtime != null">
+        #{creationtime,jdbcType=VARCHAR},
+      </if>
+      <if test="modifier != null">
+        #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifitime != null">
+        #{modifitime,jdbcType=CHAR},
+      </if>
+      <if test="housesource != null">
+        #{housesource,jdbcType=VARCHAR},
+      </if>
+      <if test="infoall != null">
+        #{infoall,jdbcType=CHAR},
+      </if>
+      <if test="def6 != null">
+        #{def6,jdbcType=VARCHAR},
+      </if>
+      <if test="def7 != null">
+        #{def7,jdbcType=VARCHAR},
+      </if>
+      <if test="def8 != null">
+        #{def8,jdbcType=VARCHAR},
+      </if>
+      <if test="def9 != null">
+        #{def9,jdbcType=VARCHAR},
+      </if>
+      <if test="def10 != null">
+        #{def10,jdbcType=VARCHAR},
+      </if>
+      <if test="pkOrg != null">
+        #{pkOrg,jdbcType=VARCHAR},
+      </if>
+      <if test="pkDept != null">
+        #{pkDept,jdbcType=VARCHAR},
+      </if>
+      <if test="isaccount != null">
+        #{isaccount,jdbcType=CHAR},
+      </if>
+      <if test="importer != null">
+        #{importer,jdbcType=VARCHAR},
+      </if>
+      <if test="importtime != null">
+        #{importtime,jdbcType=VARCHAR},
+      </if>
+      <if test="orientation != null">
+        #{orientation,jdbcType=VARCHAR},
+      </if>
+      <if test="part != null">
+        #{part,jdbcType=VARCHAR},
+      </if>
+      <if test="propervalue != null">
+        #{propervalue,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="prostatus != null">
+        #{prostatus,jdbcType=VARCHAR},
+      </if>
+      <if test="poiId != null">
+        #{poiId,jdbcType=VARCHAR},
+      </if>
+      <if test="ordx != null">
+        #{ordx,jdbcType=DECIMAL},
+      </if>
+      <if test="ordx1 != null">
+        #{ordx1,jdbcType=DECIMAL},
+      </if>
+      <if test="ordy != null">
+        #{ordy,jdbcType=DECIMAL},
+      </if>
+      <if test="ordy1 != null">
+        #{ordy1,jdbcType=DECIMAL},
+      </if>
+      <if test="zoneType != null">
+        #{zoneType,jdbcType=VARCHAR},
+      </if>
+      <if test="adminDistrict != null">
+        #{adminDistrict,jdbcType=VARCHAR},
+      </if>
+      <if test="houseUsage != null">
+        #{houseUsage,jdbcType=VARCHAR},
+      </if>
+      <if test="usageTyle != null">
+        #{usageTyle,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyOwner != null">
+        #{propertyOwner,jdbcType=VARCHAR},
+      </if>
+      <if test="yearBuilt != null">
+        #{yearBuilt,jdbcType=VARCHAR},
+      </if>
+      <if test="isDangerousHouse != null">
+        #{isDangerousHouse,jdbcType=VARCHAR},
+      </if>
+      <if test="isBasement != null">
+        #{isBasement,jdbcType=VARCHAR},
+      </if>
+      <if test="houseRight != null">
+        #{houseRight,jdbcType=VARCHAR},
+      </if>
+      <if test="assetNo != null">
+        #{assetNo,jdbcType=VARCHAR},
+      </if>
+      <if test="certStatus != null">
+        #{certStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="historyid != null">
+        #{historyid,jdbcType=VARCHAR},
+      </if>
+      <if test="filenum != null">
+        #{filenum,jdbcType=VARCHAR},
+      </if>
+      <if test="code1 != null">
+        #{code1,jdbcType=VARCHAR},
+      </if>
+      <if test="code2 != null">
+        #{code2,jdbcType=VARCHAR},
+      </if>
+      <if test="code3 != null">
+        #{code3,jdbcType=VARCHAR},
+      </if>
+      <if test="code4 != null">
+        #{code4,jdbcType=VARCHAR},
+      </if>
+      <if test="code5 != null">
+        #{code5,jdbcType=VARCHAR},
+      </if>
+      <if test="code6 != null">
+        #{code6,jdbcType=VARCHAR},
+      </if>
+      <if test="sellDate != null">
+        #{sellDate,jdbcType=VARCHAR},
+      </if>
+      <if test="pkLand != null">
+        #{pkLand,jdbcType=VARCHAR},
+      </if>
+      <if test="pkOrgValue != null">
+        #{pkOrgValue,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="licenseno != null">
+        #{licenseno,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="fieldno != null">
+        #{fieldno,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="vnote != null">
+        #{vnote,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="licenseno2 != null">
+        #{licenseno2,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="licenseno3 != null">
+        #{licenseno3,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="fieldno2 != null">
+        #{fieldno2,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="fieldno3 != null">
+        #{fieldno3,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="addresspath != null">
+        #{addresspath,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="pois != null">
+        #{pois,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="impropertyno != null">
+        #{impropertyno,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="oldUnit != null">
+        #{oldUnit,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="useUnit != null">
+        #{useUnit,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.BdHouseWithBLOBs">
+    update bd_house
+    <set>
+      <if test="code != null">
+        CODE = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null">
+        AREA = #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="pkProject != null">
+        PK_PROJECT = #{pkProject,jdbcType=VARCHAR},
+      </if>
+      <if test="addressversion != null">
+        ADDRESSVERSION = #{addressversion,jdbcType=DECIMAL},
+      </if>
+      <if test="housetype != null">
+        HOUSETYPE = #{housetype,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerunit != null">
+        OWNERUNIT = #{ownerunit,jdbcType=VARCHAR},
+      </if>
+      <if test="userunit != null">
+        USERUNIT = #{userunit,jdbcType=VARCHAR},
+      </if>
+      <if test="bureauunit != null">
+        BUREAUUNIT = #{bureauunit,jdbcType=VARCHAR},
+      </if>
+      <if test="structurearea != null">
+        STRUCTUREAREA = #{structurearea,jdbcType=DECIMAL},
+      </if>
+      <if test="usearea != null">
+        USEAREA = #{usearea,jdbcType=DECIMAL},
+      </if>
+      <if test="housestructure != null">
+        HOUSESTRUCTURE = #{housestructure,jdbcType=VARCHAR},
+      </if>
+      <if test="buildyear != null">
+        BUILDYEAR = #{buildyear,jdbcType=VARCHAR},
+      </if>
+      <if test="alllevel != null">
+        ALLLEVEL = #{alllevel,jdbcType=DECIMAL},
+      </if>
+      <if test="levels != null">
+        LEVELS = #{levels,jdbcType=DECIMAL},
+      </if>
+      <if test="usetype != null">
+        USETYPE = #{usetype,jdbcType=VARCHAR},
+      </if>
+      <if test="licensedate != null">
+        LICENSEDATE = #{licensedate,jdbcType=VARCHAR},
+      </if>
+      <if test="warrantarea != null">
+        WARRANTAREA = #{warrantarea,jdbcType=DECIMAL},
+      </if>
+      <if test="ownershiplicense != null">
+        OWNERSHIPLICENSE = #{ownershiplicense,jdbcType=VARCHAR},
+      </if>
+      <if test="fielduse != null">
+        FIELDUSE = #{fielduse,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldarea != null">
+        FIELDAREA = #{fieldarea,jdbcType=DECIMAL},
+      </if>
+      <if test="signtime != null">
+        SIGNTIME = #{signtime,jdbcType=VARCHAR},
+      </if>
+      <if test="enable != null">
+        `ENABLE` = #{enable,jdbcType=VARCHAR},
+      </if>
+      <if test="dr != null">
+        DR = #{dr,jdbcType=VARCHAR},
+      </if>
+      <if test="ts != null">
+        TS = #{ts,jdbcType=CHAR},
+      </if>
+      <if test="def1 != null">
+        DEF1 = #{def1,jdbcType=VARCHAR},
+      </if>
+      <if test="def2 != null">
+        DEF2 = #{def2,jdbcType=VARCHAR},
+      </if>
+      <if test="def3 != null">
+        DEF3 = #{def3,jdbcType=VARCHAR},
+      </if>
+      <if test="def4 != null">
+        DEF4 = #{def4,jdbcType=VARCHAR},
+      </if>
+      <if test="def5 != null">
+        DEF5 = #{def5,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null">
+        CREATOR = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creationtime != null">
+        CREATIONTIME = #{creationtime,jdbcType=VARCHAR},
+      </if>
+      <if test="modifier != null">
+        MODIFIER = #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="modifitime != null">
+        MODIFITIME = #{modifitime,jdbcType=CHAR},
+      </if>
+      <if test="housesource != null">
+        HOUSESOURCE = #{housesource,jdbcType=VARCHAR},
+      </if>
+      <if test="infoall != null">
+        INFOALL = #{infoall,jdbcType=CHAR},
+      </if>
+      <if test="def6 != null">
+        DEF6 = #{def6,jdbcType=VARCHAR},
+      </if>
+      <if test="def7 != null">
+        DEF7 = #{def7,jdbcType=VARCHAR},
+      </if>
+      <if test="def8 != null">
+        DEF8 = #{def8,jdbcType=VARCHAR},
+      </if>
+      <if test="def9 != null">
+        DEF9 = #{def9,jdbcType=VARCHAR},
+      </if>
+      <if test="def10 != null">
+        DEF10 = #{def10,jdbcType=VARCHAR},
+      </if>
+      <if test="pkOrg != null">
+        PK_ORG = #{pkOrg,jdbcType=VARCHAR},
+      </if>
+      <if test="pkDept != null">
+        PK_DEPT = #{pkDept,jdbcType=VARCHAR},
+      </if>
+      <if test="isaccount != null">
+        ISACCOUNT = #{isaccount,jdbcType=CHAR},
+      </if>
+      <if test="importer != null">
+        IMPORTER = #{importer,jdbcType=VARCHAR},
+      </if>
+      <if test="importtime != null">
+        IMPORTTIME = #{importtime,jdbcType=VARCHAR},
+      </if>
+      <if test="orientation != null">
+        ORIENTATION = #{orientation,jdbcType=VARCHAR},
+      </if>
+      <if test="part != null">
+        `PART` = #{part,jdbcType=VARCHAR},
+      </if>
+      <if test="propervalue != null">
+        PROPERVALUE = #{propervalue,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        `STATUS` = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="prostatus != null">
+        PROSTATUS = #{prostatus,jdbcType=VARCHAR},
+      </if>
+      <if test="poiId != null">
+        POI_ID = #{poiId,jdbcType=VARCHAR},
+      </if>
+      <if test="ordx != null">
+        ORDX = #{ordx,jdbcType=DECIMAL},
+      </if>
+      <if test="ordx1 != null">
+        ORDX1 = #{ordx1,jdbcType=DECIMAL},
+      </if>
+      <if test="ordy != null">
+        ORDY = #{ordy,jdbcType=DECIMAL},
+      </if>
+      <if test="ordy1 != null">
+        ORDY1 = #{ordy1,jdbcType=DECIMAL},
+      </if>
+      <if test="zoneType != null">
+        ZONE_TYPE = #{zoneType,jdbcType=VARCHAR},
+      </if>
+      <if test="adminDistrict != null">
+        ADMIN_DISTRICT = #{adminDistrict,jdbcType=VARCHAR},
+      </if>
+      <if test="houseUsage != null">
+        HOUSE_USAGE = #{houseUsage,jdbcType=VARCHAR},
+      </if>
+      <if test="usageTyle != null">
+        USAGE_TYLE = #{usageTyle,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyOwner != null">
+        PROPERTY_OWNER = #{propertyOwner,jdbcType=VARCHAR},
+      </if>
+      <if test="yearBuilt != null">
+        YEAR_BUILT = #{yearBuilt,jdbcType=VARCHAR},
+      </if>
+      <if test="isDangerousHouse != null">
+        IS_DANGEROUS_HOUSE = #{isDangerousHouse,jdbcType=VARCHAR},
+      </if>
+      <if test="isBasement != null">
+        IS_BASEMENT = #{isBasement,jdbcType=VARCHAR},
+      </if>
+      <if test="houseRight != null">
+        HOUSE_RIGHT = #{houseRight,jdbcType=VARCHAR},
+      </if>
+      <if test="assetNo != null">
+        ASSET_NO = #{assetNo,jdbcType=VARCHAR},
+      </if>
+      <if test="certStatus != null">
+        CERT_STATUS = #{certStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="historyid != null">
+        HISTORYID = #{historyid,jdbcType=VARCHAR},
+      </if>
+      <if test="filenum != null">
+        FILENUM = #{filenum,jdbcType=VARCHAR},
+      </if>
+      <if test="code1 != null">
+        CODE1 = #{code1,jdbcType=VARCHAR},
+      </if>
+      <if test="code2 != null">
+        CODE2 = #{code2,jdbcType=VARCHAR},
+      </if>
+      <if test="code3 != null">
+        CODE3 = #{code3,jdbcType=VARCHAR},
+      </if>
+      <if test="code4 != null">
+        CODE4 = #{code4,jdbcType=VARCHAR},
+      </if>
+      <if test="code5 != null">
+        CODE5 = #{code5,jdbcType=VARCHAR},
+      </if>
+      <if test="code6 != null">
+        CODE6 = #{code6,jdbcType=VARCHAR},
+      </if>
+      <if test="sellDate != null">
+        SELL_DATE = #{sellDate,jdbcType=VARCHAR},
+      </if>
+      <if test="pkLand != null">
+        PK_LAND = #{pkLand,jdbcType=VARCHAR},
+      </if>
+      <if test="pkOrgValue != null">
+        PK_ORG_VALUE = #{pkOrgValue,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        ADDRESS = #{address,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="licenseno != null">
+        LICENSENO = #{licenseno,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="fieldno != null">
+        FIELDNO = #{fieldno,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="vnote != null">
+        VNOTE = #{vnote,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="licenseno2 != null">
+        LICENSENO2 = #{licenseno2,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="licenseno3 != null">
+        LICENSENO3 = #{licenseno3,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="fieldno2 != null">
+        FIELDNO2 = #{fieldno2,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="fieldno3 != null">
+        FIELDNO3 = #{fieldno3,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="addresspath != null">
+        ADDRESSPATH = #{addresspath,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="pois != null">
+        POIS = #{pois,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="impropertyno != null">
+        IMPROPERTYNO = #{impropertyno,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="oldUnit != null">
+        OLD_UNIT = #{oldUnit,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="useUnit != null">
+        USE_UNIT = #{useUnit,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where PK_HOUSE = #{pkHouse,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.example.BdHouseWithBLOBs">
+    update bd_house
+    set CODE = #{code,jdbcType=VARCHAR},
+      AREA = #{area,jdbcType=VARCHAR},
+      PK_PROJECT = #{pkProject,jdbcType=VARCHAR},
+      ADDRESSVERSION = #{addressversion,jdbcType=DECIMAL},
+      HOUSETYPE = #{housetype,jdbcType=VARCHAR},
+      OWNERUNIT = #{ownerunit,jdbcType=VARCHAR},
+      USERUNIT = #{userunit,jdbcType=VARCHAR},
+      BUREAUUNIT = #{bureauunit,jdbcType=VARCHAR},
+      STRUCTUREAREA = #{structurearea,jdbcType=DECIMAL},
+      USEAREA = #{usearea,jdbcType=DECIMAL},
+      HOUSESTRUCTURE = #{housestructure,jdbcType=VARCHAR},
+      BUILDYEAR = #{buildyear,jdbcType=VARCHAR},
+      ALLLEVEL = #{alllevel,jdbcType=DECIMAL},
+      LEVELS = #{levels,jdbcType=DECIMAL},
+      USETYPE = #{usetype,jdbcType=VARCHAR},
+      LICENSEDATE = #{licensedate,jdbcType=VARCHAR},
+      WARRANTAREA = #{warrantarea,jdbcType=DECIMAL},
+      OWNERSHIPLICENSE = #{ownershiplicense,jdbcType=VARCHAR},
+      FIELDUSE = #{fielduse,jdbcType=VARCHAR},
+      FIELDAREA = #{fieldarea,jdbcType=DECIMAL},
+      SIGNTIME = #{signtime,jdbcType=VARCHAR},
+      `ENABLE` = #{enable,jdbcType=VARCHAR},
+      DR = #{dr,jdbcType=VARCHAR},
+      TS = #{ts,jdbcType=CHAR},
+      DEF1 = #{def1,jdbcType=VARCHAR},
+      DEF2 = #{def2,jdbcType=VARCHAR},
+      DEF3 = #{def3,jdbcType=VARCHAR},
+      DEF4 = #{def4,jdbcType=VARCHAR},
+      DEF5 = #{def5,jdbcType=VARCHAR},
+      CREATOR = #{creator,jdbcType=VARCHAR},
+      CREATIONTIME = #{creationtime,jdbcType=VARCHAR},
+      MODIFIER = #{modifier,jdbcType=VARCHAR},
+      MODIFITIME = #{modifitime,jdbcType=CHAR},
+      HOUSESOURCE = #{housesource,jdbcType=VARCHAR},
+      INFOALL = #{infoall,jdbcType=CHAR},
+      DEF6 = #{def6,jdbcType=VARCHAR},
+      DEF7 = #{def7,jdbcType=VARCHAR},
+      DEF8 = #{def8,jdbcType=VARCHAR},
+      DEF9 = #{def9,jdbcType=VARCHAR},
+      DEF10 = #{def10,jdbcType=VARCHAR},
+      PK_ORG = #{pkOrg,jdbcType=VARCHAR},
+      PK_DEPT = #{pkDept,jdbcType=VARCHAR},
+      ISACCOUNT = #{isaccount,jdbcType=CHAR},
+      IMPORTER = #{importer,jdbcType=VARCHAR},
+      IMPORTTIME = #{importtime,jdbcType=VARCHAR},
+      ORIENTATION = #{orientation,jdbcType=VARCHAR},
+      `PART` = #{part,jdbcType=VARCHAR},
+      PROPERVALUE = #{propervalue,jdbcType=DECIMAL},
+      `STATUS` = #{status,jdbcType=VARCHAR},
+      PROSTATUS = #{prostatus,jdbcType=VARCHAR},
+      POI_ID = #{poiId,jdbcType=VARCHAR},
+      ORDX = #{ordx,jdbcType=DECIMAL},
+      ORDX1 = #{ordx1,jdbcType=DECIMAL},
+      ORDY = #{ordy,jdbcType=DECIMAL},
+      ORDY1 = #{ordy1,jdbcType=DECIMAL},
+      ZONE_TYPE = #{zoneType,jdbcType=VARCHAR},
+      ADMIN_DISTRICT = #{adminDistrict,jdbcType=VARCHAR},
+      HOUSE_USAGE = #{houseUsage,jdbcType=VARCHAR},
+      USAGE_TYLE = #{usageTyle,jdbcType=VARCHAR},
+      PROPERTY_OWNER = #{propertyOwner,jdbcType=VARCHAR},
+      YEAR_BUILT = #{yearBuilt,jdbcType=VARCHAR},
+      IS_DANGEROUS_HOUSE = #{isDangerousHouse,jdbcType=VARCHAR},
+      IS_BASEMENT = #{isBasement,jdbcType=VARCHAR},
+      HOUSE_RIGHT = #{houseRight,jdbcType=VARCHAR},
+      ASSET_NO = #{assetNo,jdbcType=VARCHAR},
+      CERT_STATUS = #{certStatus,jdbcType=VARCHAR},
+      HISTORYID = #{historyid,jdbcType=VARCHAR},
+      FILENUM = #{filenum,jdbcType=VARCHAR},
+      CODE1 = #{code1,jdbcType=VARCHAR},
+      CODE2 = #{code2,jdbcType=VARCHAR},
+      CODE3 = #{code3,jdbcType=VARCHAR},
+      CODE4 = #{code4,jdbcType=VARCHAR},
+      CODE5 = #{code5,jdbcType=VARCHAR},
+      CODE6 = #{code6,jdbcType=VARCHAR},
+      SELL_DATE = #{sellDate,jdbcType=VARCHAR},
+      PK_LAND = #{pkLand,jdbcType=VARCHAR},
+      PK_ORG_VALUE = #{pkOrgValue,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=LONGVARCHAR},
+      LICENSENO = #{licenseno,jdbcType=LONGVARCHAR},
+      FIELDNO = #{fieldno,jdbcType=LONGVARCHAR},
+      VNOTE = #{vnote,jdbcType=LONGVARCHAR},
+      LICENSENO2 = #{licenseno2,jdbcType=LONGVARCHAR},
+      LICENSENO3 = #{licenseno3,jdbcType=LONGVARCHAR},
+      FIELDNO2 = #{fieldno2,jdbcType=LONGVARCHAR},
+      FIELDNO3 = #{fieldno3,jdbcType=LONGVARCHAR},
+      ADDRESSPATH = #{addresspath,jdbcType=LONGVARCHAR},
+      POIS = #{pois,jdbcType=LONGVARCHAR},
+      IMPROPERTYNO = #{impropertyno,jdbcType=LONGVARCHAR},
+      OLD_UNIT = #{oldUnit,jdbcType=LONGVARCHAR},
+      USE_UNIT = #{useUnit,jdbcType=LONGVARCHAR}
+    where PK_HOUSE = #{pkHouse,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.BdHouse">
+    update bd_house
+    set CODE = #{code,jdbcType=VARCHAR},
+      AREA = #{area,jdbcType=VARCHAR},
+      PK_PROJECT = #{pkProject,jdbcType=VARCHAR},
+      ADDRESSVERSION = #{addressversion,jdbcType=DECIMAL},
+      HOUSETYPE = #{housetype,jdbcType=VARCHAR},
+      OWNERUNIT = #{ownerunit,jdbcType=VARCHAR},
+      USERUNIT = #{userunit,jdbcType=VARCHAR},
+      BUREAUUNIT = #{bureauunit,jdbcType=VARCHAR},
+      STRUCTUREAREA = #{structurearea,jdbcType=DECIMAL},
+      USEAREA = #{usearea,jdbcType=DECIMAL},
+      HOUSESTRUCTURE = #{housestructure,jdbcType=VARCHAR},
+      BUILDYEAR = #{buildyear,jdbcType=VARCHAR},
+      ALLLEVEL = #{alllevel,jdbcType=DECIMAL},
+      LEVELS = #{levels,jdbcType=DECIMAL},
+      USETYPE = #{usetype,jdbcType=VARCHAR},
+      LICENSEDATE = #{licensedate,jdbcType=VARCHAR},
+      WARRANTAREA = #{warrantarea,jdbcType=DECIMAL},
+      OWNERSHIPLICENSE = #{ownershiplicense,jdbcType=VARCHAR},
+      FIELDUSE = #{fielduse,jdbcType=VARCHAR},
+      FIELDAREA = #{fieldarea,jdbcType=DECIMAL},
+      SIGNTIME = #{signtime,jdbcType=VARCHAR},
+      `ENABLE` = #{enable,jdbcType=VARCHAR},
+      DR = #{dr,jdbcType=VARCHAR},
+      TS = #{ts,jdbcType=CHAR},
+      DEF1 = #{def1,jdbcType=VARCHAR},
+      DEF2 = #{def2,jdbcType=VARCHAR},
+      DEF3 = #{def3,jdbcType=VARCHAR},
+      DEF4 = #{def4,jdbcType=VARCHAR},
+      DEF5 = #{def5,jdbcType=VARCHAR},
+      CREATOR = #{creator,jdbcType=VARCHAR},
+      CREATIONTIME = #{creationtime,jdbcType=VARCHAR},
+      MODIFIER = #{modifier,jdbcType=VARCHAR},
+      MODIFITIME = #{modifitime,jdbcType=CHAR},
+      HOUSESOURCE = #{housesource,jdbcType=VARCHAR},
+      INFOALL = #{infoall,jdbcType=CHAR},
+      DEF6 = #{def6,jdbcType=VARCHAR},
+      DEF7 = #{def7,jdbcType=VARCHAR},
+      DEF8 = #{def8,jdbcType=VARCHAR},
+      DEF9 = #{def9,jdbcType=VARCHAR},
+      DEF10 = #{def10,jdbcType=VARCHAR},
+      PK_ORG = #{pkOrg,jdbcType=VARCHAR},
+      PK_DEPT = #{pkDept,jdbcType=VARCHAR},
+      ISACCOUNT = #{isaccount,jdbcType=CHAR},
+      IMPORTER = #{importer,jdbcType=VARCHAR},
+      IMPORTTIME = #{importtime,jdbcType=VARCHAR},
+      ORIENTATION = #{orientation,jdbcType=VARCHAR},
+      `PART` = #{part,jdbcType=VARCHAR},
+      PROPERVALUE = #{propervalue,jdbcType=DECIMAL},
+      `STATUS` = #{status,jdbcType=VARCHAR},
+      PROSTATUS = #{prostatus,jdbcType=VARCHAR},
+      POI_ID = #{poiId,jdbcType=VARCHAR},
+      ORDX = #{ordx,jdbcType=DECIMAL},
+      ORDX1 = #{ordx1,jdbcType=DECIMAL},
+      ORDY = #{ordy,jdbcType=DECIMAL},
+      ORDY1 = #{ordy1,jdbcType=DECIMAL},
+      ZONE_TYPE = #{zoneType,jdbcType=VARCHAR},
+      ADMIN_DISTRICT = #{adminDistrict,jdbcType=VARCHAR},
+      HOUSE_USAGE = #{houseUsage,jdbcType=VARCHAR},
+      USAGE_TYLE = #{usageTyle,jdbcType=VARCHAR},
+      PROPERTY_OWNER = #{propertyOwner,jdbcType=VARCHAR},
+      YEAR_BUILT = #{yearBuilt,jdbcType=VARCHAR},
+      IS_DANGEROUS_HOUSE = #{isDangerousHouse,jdbcType=VARCHAR},
+      IS_BASEMENT = #{isBasement,jdbcType=VARCHAR},
+      HOUSE_RIGHT = #{houseRight,jdbcType=VARCHAR},
+      ASSET_NO = #{assetNo,jdbcType=VARCHAR},
+      CERT_STATUS = #{certStatus,jdbcType=VARCHAR},
+      HISTORYID = #{historyid,jdbcType=VARCHAR},
+      FILENUM = #{filenum,jdbcType=VARCHAR},
+      CODE1 = #{code1,jdbcType=VARCHAR},
+      CODE2 = #{code2,jdbcType=VARCHAR},
+      CODE3 = #{code3,jdbcType=VARCHAR},
+      CODE4 = #{code4,jdbcType=VARCHAR},
+      CODE5 = #{code5,jdbcType=VARCHAR},
+      CODE6 = #{code6,jdbcType=VARCHAR},
+      SELL_DATE = #{sellDate,jdbcType=VARCHAR},
+      PK_LAND = #{pkLand,jdbcType=VARCHAR},
+      PK_ORG_VALUE = #{pkOrgValue,jdbcType=VARCHAR}
+    where PK_HOUSE = #{pkHouse,jdbcType=VARCHAR}
+  </update>
+</mapper>
